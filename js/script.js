@@ -98,14 +98,19 @@ function generateGrid(container) {
         let numCell = i+1;
         cell.innerText = numCell;
 
+        let checked = false;
         cell.addEventListener('click', function(){
             if(score < scoreMax){
                 if (!gameOver) {
                     if (!bombe.includes(numCell)) {
                         this.classList.add('clicked');
-                        console.log('safe');
-                        score++;
-                        text_score.innerText = `Score: ${score}`;
+                        
+                        if (!checked) {
+                            console.log('safe');
+                            score++;
+                            text_score.innerText = `Score: ${score}`;
+                            checked = true;
+                        }
                     }else{
                         this.classList.add('bomb');
                         gameOver = true;
