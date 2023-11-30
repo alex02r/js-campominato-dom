@@ -1,6 +1,6 @@
 //funzione che crea un numero unico da 1 al numero delle celle della griglia
 function generateUniqueRandomNumber(numOfCell, array_bomb) {
-    let num;
+    let num = 0;
     check_number = false;
     while (!check_number) {
         num = Math.floor(Math.random()* numOfCell + 1);
@@ -18,6 +18,8 @@ function createArrayBomb(numOfBomb, num_cell) {
     for (let i = 0; i < numOfBomb; i++) {
         bombs.push(generateUniqueRandomNumber(num_cell, bombs));
     }
+
+    return bombs;
 }
 
 
