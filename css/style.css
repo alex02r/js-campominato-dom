@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content-grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* definiamo la cella */
+.cell{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    
+}
+.clicked{
+    background-color: blue;
+    color: white;
+}
