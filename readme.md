@@ -38,4 +38,17 @@ Ad esempio: Di cosa ho bisogno per generare i numeri? Proviamo sempre prima con 
         2.3 - for (let i=0; i < numOfBomb; i++) ciclo for per la creazione delle bombe.
             2.3.1 - bombs.push(generateUniqueRandomNumber(num_cell, bombs)) aggiungiamo all'array il numero che genere e controlla la funzione
 3 - Implementiamo il controllo al click (se è una bomba o no), (controlliamo anche se abbiamo raggiunto il punteggio massimo = numero di celle - 16 bombe).
+        //SIAMO NELLA FUNZIONE generateGrid()
+    3.1 - Inizializziamo la costante num_bomb a 16.
+    3.2 - inizializziamo una costante bombe e ci richiamiamo la funzione createArrayBomb(num_bomb, cell_row).
+    3.3 - Inizializiamo una variabile gameOver = false;
+    3.4 - Inizializziamo una variabile punteggio;
+    3.5 - Inizializziamo una variabile punteggioMax = cell_row - num_bomb;
+    //siamo al click della casella
+    3.6 - ? gameOver == false 
+        3.6.1 - ? punteggio < punteggioMax
+            3.6.1.1 - ? !bombs.includes(i)
+                3.6.1.1 - coloriamo la cella 
+            3.6.1.2 - : è una bomba 
+        3.6.2 - : Hai vinto ;
 4 - comunichiamo il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
