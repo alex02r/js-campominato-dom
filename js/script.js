@@ -1,3 +1,17 @@
+//funzione che crea un numero unico da 1 al numero delle celle della griglia
+function generateUniqueRandomNumber(numCell, array_bomb) {
+    let num;
+    check_number = false;
+    while (!check_number) {
+        num = Math.floor(Math.random()* numCell + 1);
+        if (!array_bomb.includes(num)) {
+            check_number = true;
+        }
+    }
+    return num;
+}
+
+
 //funzione per creare la cella 
 function createCell() {
     //aggiungiamo uun div con classe "cell" nell'html
