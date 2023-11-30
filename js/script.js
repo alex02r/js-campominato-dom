@@ -1,14 +1,23 @@
 //funzione che crea un numero unico da 1 al numero delle celle della griglia
-function generateUniqueRandomNumber(numCell, array_bomb) {
+function generateUniqueRandomNumber(numOfCell, array_bomb) {
     let num;
     check_number = false;
     while (!check_number) {
-        num = Math.floor(Math.random()* numCell + 1);
+        num = Math.floor(Math.random()* numOfCell + 1);
         if (!array_bomb.includes(num)) {
             check_number = true;
         }
     }
     return num;
+}
+
+//funzione che crea un array di bombe
+function createArrayBomb(numOfBomb, num_cell) {
+    let bombs = [];
+
+    for (let i = 0; i < numOfBomb; i++) {
+        bombs.push(generateUniqueRandomNumber(num_cell, bombs));
+    }
 }
 
 
