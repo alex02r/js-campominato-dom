@@ -23,6 +23,11 @@
     align-items: center;
     
 }
+.text-content{
+    font-size: 20px;
+    padding: 5px;
+}
+
 .clicked{
     border: 1px solid #7E7E7E;
 }

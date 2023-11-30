@@ -42,6 +42,7 @@ function generateGrid(container) {
     top_container.classList.add('content');
 
     const text_score = document.createElement('p');
+    text_score.classList.add('text-content');
     text_score.innerText = "Score: 0"
     top_container.appendChild(text_score);
 
@@ -114,10 +115,12 @@ function generateGrid(container) {
                     }else{
                         this.classList.add('bomb');
                         gameOver = true;
+                        text_score.innerText += " BOOM!! hai perso, hai preso una bomba. Riprova";
                         console.log('BOOM!!');
                     }
                 }
             }else if(score == scoreMax){
+                text_score.innerText += "WIN!! Complimenti hai vinto";
                 console.log('Hai vinto!!');
             }
 
