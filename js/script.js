@@ -91,7 +91,7 @@ function generateGrid(container) {
     let cellLength = cell_row * cell_row;
 
     //creaiamo l'array con le bombe
-    const num_bomb = 1;
+    const num_bomb = 16;
     const bombe = createArrayBomb(num_bomb, cellLength);
 
     console.log(bombe.sort());
