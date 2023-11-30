@@ -3,23 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+.grid{
+    padding: 10px;
+    background-color: #BDBDBD;
+    border: 4px outset #FFFFFF;
+    box-shadow: 0px 1px 6px 0px #000000;
+}
 .content-grid{
     display: flex;
     flex-wrap: wrap;
+    border: 5px inset #FFFFFF;
 }
 /* definiamo la cella */
 .cell{
     width: 100px;
     height: 100px;
-    background-color: aquamarine;
-    border: 1px solid black;
+    border: 5px outset #FFFFFF;
+    background-color: #BDBDBD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 .clicked{
-    background-color: blue;
-    color: white;
+    border: 1px solid #7E7E7E;
 }
 .bomb{
+    border: 1px solid #7E7E7E;
     background-color: red;
     color: white;
 }

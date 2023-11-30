@@ -35,6 +35,7 @@ function createCell() {
 //funzione che crea la griglia
 function generateGrid(container) {
     container.innerHTML="";
+    container.classList.add('grid');
     //creiamo  l'elemento griglia
     const content = document.createElement('div');
     content.classList.add('content-grid'); 
@@ -72,7 +73,7 @@ function generateGrid(container) {
     const num_bomb = 16;
     const bombe = createArrayBomb(num_bomb, cellLength);
 
-    console.log(bombe);
+    console.log(bombe.sort());
 
     let gameOver = false;
     let score = 0;
@@ -88,7 +89,7 @@ function generateGrid(container) {
         cell.addEventListener('click', function(){
             if(score < scoreMax){
                 if (!gameOver) {
-                    if (!bombe.includes(i)) {
+                    if (!bombe.includes(numCell)) {
                         this.classList.add('clicked');
                         console.log('safe');
                         score++;
@@ -97,9 +98,9 @@ function generateGrid(container) {
                         gameOver = true;
                         console.log('BOOM!!');
                     }
-                }else{
-                    console.log('Hai vinto!!');
                 }
+            }else if(score == scoreMax){
+                console.log('Hai vinto!!');
             }
 
         });
@@ -109,7 +110,7 @@ function generateGrid(container) {
 
 
     //caclolare la dimensione della width della griglia
-    content.style.setProperty('width', `calc(100px * ${cell_row})`);
+    content.style.setProperty('width', `calc(100px * ${cell_row} + 10px)`);
     //aggiungiamo la griglia creata al div grid
     container.appendChild(content);
 
