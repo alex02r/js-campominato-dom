@@ -24,6 +24,14 @@ Ad esempio: Di cosa ho bisogno per generare i numeri? Proviamo sempre prima con 
 
 **SOLUZIONE**
 1 - Creiamo la funzione che genera un numero casuale in base alle celle.
+    1.1 - function generateUniqueRandomNumber(numCell, array_bomb)
+        1.2 - dichiariamo una variabile numero.
+        1.3 - inizializziamo una variabile check_number = false;
+        1.4 - assegnamo a numero un numero casueale da 1 a numCell.
+        1.5 - while (!flag) //fino a quando il numero non è presente
+            1.5.1 - ? !array_bomb.includes(numero)
+                        1.5.1.1 - check_number = true . il numero non è presente e possiamo passare il valore. 
+        1.6 - return numero;             
 2 - Creaiamo una funzione che crea un array di 16 numeri casuali che rappresentano le bombe.
 3 - Implementiamo il controllo al click (se è una bomba o no), (controlliamo anche se abbiamo raggiunto il punteggio massimo = numero di celle - 16 bombe).
 4 - comunichiamo il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
