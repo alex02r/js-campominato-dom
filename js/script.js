@@ -40,11 +40,19 @@ function generateGrid(container) {
     //creaiamo il div del punteggio
     const top_container = document.createElement('div');
     top_container.classList.add('content');
+    top_container.classList.add('d-flex');
+    top_container.classList.add('justify-content-between');
 
     const text_score = document.createElement('p');
     text_score.classList.add('text-content');
     text_score.innerText = "Score: 0"
     top_container.appendChild(text_score);
+
+    //CREAIAMO PULSANTE DI CONFERMA
+    const validate = document.createElement('button');
+    validate.classList.add('cell');
+    validate.innerText = "Fine";
+    top_container.appendChild(validate);
 
     //creiamo  l'elemento griglia
     const content = document.createElement('div');
@@ -83,7 +91,7 @@ function generateGrid(container) {
     let cellLength = cell_row * cell_row;
 
     //creaiamo l'array con le bombe
-    const num_bomb = 16;
+    const num_bomb = 1;
     const bombe = createArrayBomb(num_bomb, cellLength);
 
     console.log(bombe.sort());
@@ -115,19 +123,21 @@ function generateGrid(container) {
                     }else{
                         this.classList.add('bomb');
                         gameOver = true;
-                        text_score.innerText += " BOOM!! hai perso, hai preso una bomba. Riprova";
+                        text_score.innerText += " BOOM!! hai perso. Riprova";
                         console.log('BOOM!!');
                     }
                 }
-            }else if(score == scoreMax){
-                text_score.innerText += "WIN!! Complimenti hai vinto";
-                console.log('Hai vinto!!');
             }
-
         });
-
         content.appendChild(cell);
     }
+    
+    validate.addEventListener('click', function () {
+        if (score == scoreMax) {
+            text_score.innerText += "WIN!! Complimenti hai vinto";
+            console.log('Hai vinto!!');
+        }
+    })
 
 
     //caclolare la dimensione della width della griglia
