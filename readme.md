@@ -33,5 +33,9 @@ Ad esempio: Di cosa ho bisogno per generare i numeri? Proviamo sempre prima con 
                         1.5.1.1 - check_number = true . il numero non è presente e possiamo passare il valore. 
         1.6 - return numero;             
 2 - Creaiamo una funzione che crea un array di 16 numeri casuali che rappresentano le bombe.
+    2.1 - funtion createArrayBomb(numOfBomb, num_cell) gli passiamo quante bombe deve contenere e il numero di celle
+        2.2 - inizializiamo l'array bombs = [].
+        2.3 - for (let i=0; i < numOfBomb; i++) ciclo for per la creazione delle bombe.
+            2.3.1 - bombs.push(generateUniqueRandomNumber(num_cell, bombs)) aggiungiamo all'array il numero che genere e controlla la funzione
 3 - Implementiamo il controllo al click (se è una bomba o no), (controlliamo anche se abbiamo raggiunto il punteggio massimo = numero di celle - 16 bombe).
 4 - comunichiamo il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
