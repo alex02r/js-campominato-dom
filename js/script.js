@@ -36,10 +36,22 @@ function createCell() {
 function generateGrid(container) {
     container.innerHTML="";
     container.classList.add('grid');
+
+    //creaiamo il div del punteggio
+    const top_container = document.createElement('div');
+    top_container.classList.add('content');
+
+    const text_score = document.createElement('p');
+    text_score.innerText = "Score: 0"
+    top_container.appendChild(text_score);
+
     //creiamo  l'elemento griglia
     const content = document.createElement('div');
-    content.classList.add('content-grid'); 
+    content.classList.add('content'); 
+    content.classList.add('d-flex'); 
+    content.classList.add('flex-wrap'); 
 
+    
     //controlliamo il livello di difficoltà
     const select = document.getElementById('difficulty');
     let difficulty = select.value;
@@ -93,6 +105,7 @@ function generateGrid(container) {
                         this.classList.add('clicked');
                         console.log('safe');
                         score++;
+                        text_score.innerText = `Score: ${score}`;
                     }else{
                         this.classList.add('bomb');
                         gameOver = true;
@@ -112,6 +125,7 @@ function generateGrid(container) {
     //caclolare la dimensione della width della griglia
     content.style.setProperty('width', `calc(100px * ${cell_row} + 10px)`);
     //aggiungiamo la griglia creata al div grid
+    container.appendChild(top_container);
     container.appendChild(content);
 
 }
