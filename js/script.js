@@ -121,6 +121,14 @@ function generateGrid(container) {
                             checked = true;
                         }
                     }else{
+                        //far apparire tutte le bombe
+                        const cell = document.querySelectorAll('.cell');
+
+                        for (let i = 0; i < cell.length; i++) {
+                            if (bombe.includes(parseInt(cell[i].innerText))) {
+                                cell[i].classList.add('bomb');
+                            }
+                        }
                         this.classList.add('bomb');
                         gameOver = true;
                         text_score.innerText += " BOOM!! hai perso. Riprova";
